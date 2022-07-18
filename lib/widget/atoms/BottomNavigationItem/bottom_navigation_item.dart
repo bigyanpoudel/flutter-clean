@@ -21,7 +21,7 @@ class BottomNavigationItem extends StatelessWidget {
       width: isActive ? 112 : 60,
       decoration: isActive
           ? BoxDecoration(
-              color: Theme.of(context).appBarTheme.backgroundColor[500],
+              color: Theme.of(context).appBarTheme.backgroundColor,
               borderRadius: BorderRadius.circular(20))
           : const BoxDecoration(),
       padding: isActive
