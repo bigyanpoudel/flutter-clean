@@ -14,3 +14,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## To Run:
+
+- Copy `lib/config.dart.example` to `lib/config.dart` and update the fields as required.
+- Run `flutter pub get` to install dependencies.
+- Run `flutter pub run build_runner watch --delete-conflicting-outputs` for code generation
+- Run `flutter run lib/main.dart` to run the application.

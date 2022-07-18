@@ -21,9 +21,9 @@ class BottomNavigation extends ConsumerWidget {
     return Container(
       width: size.width,
       height: 56,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4)],
+      decoration: BoxDecoration(
+        color: Theme.of(context).appBarTheme.backgroundColor,
+        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
       ),
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
       child: Row(

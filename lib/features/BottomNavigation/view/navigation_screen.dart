@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_app/config/localization/app_localization.dart';
+import 'package:test_app/config/theme/theme_selector.dart';
 import 'package:test_app/widget/molecules/BottomNavigation/bottom_navigation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../../routes/routes.dart';
@@ -17,11 +16,11 @@ class NavigationScreen extends ConsumerWidget {
     final viewIndex = ref.watch(viewTypeProvider.state);
     final view = ref.watch(viewProvider);
     final size = MediaQuery.of(context).size;
-    log("my locale ${context.locale}");
     return Scaffold(
       appBar: AppBar(
         title: const Text("hello").tr(),
         actions: [
+          const ThemeSelector(),
           const AppLocalization(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
