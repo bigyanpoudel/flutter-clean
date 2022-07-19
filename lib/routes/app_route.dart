@@ -9,6 +9,7 @@ import 'package:test_app/features/Login/view/login_page.dart';
 import 'package:test_app/features/Setting/setting_screen.dart';
 import 'package:test_app/features/auth/auth_check/auth_check.dart';
 import 'package:test_app/features/auth/view/login_screen.dart';
+import 'package:test_app/features/onboarding/onboarding_screen.dart';
 
 @MaterialAutoRouter(routes: <AutoRoute>[
   MaterialRoute(
@@ -20,6 +21,9 @@ import 'package:test_app/features/auth/view/login_screen.dart';
   ),
   MaterialRoute(
     page: NavigationScreen,
+  ),
+  MaterialRoute(
+    page: AppOnboardingScreen,
   ),
   MaterialRoute(
     page: SingleAlbumScreen,

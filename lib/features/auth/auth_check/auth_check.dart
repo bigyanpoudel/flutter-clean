@@ -8,14 +8,14 @@ import 'package:test_app/features/auth/auth_state_notifier/auth_state_notifier_p
 import 'package:test_app/routes/routes.dart';
 
 bool? isFirsTime; //To show onboarding screen only one time
-final userdata = GetStorage();
+final isOnboarded = GetStorage();
 
 class AuthCheckWidget extends ConsumerWidget {
   const AuthCheckWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    isFirsTime = userdata.read("intro");
+    isFirsTime = isOnboarded.read("intro");
     log("----> user first $isFirsTime");
     ref.listen<AuthState>(
       authStateNotifierProvider,
@@ -23,9 +23,9 @@ class AuthCheckWidget extends ConsumerWidget {
         next.map(
           authenticated: (_) => {
             if (isFirsTime == true || isFirsTime == null)
-              {context.router.replace(const NavigationScreenRoute())}
+              {context.router.replace(const AppOnboardingScreenRoute())}
             else
-              {context.router.replace(const LoginScreenRoute())}
+              {context.router.replace(const NavigationScreenRoute())}
           },
           unAuthenticated: (_) => {
             if (isFirsTime == true || isFirsTime == null)
