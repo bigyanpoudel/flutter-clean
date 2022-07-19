@@ -48,6 +48,11 @@ dependencies:
   auto_route: ^4.0.1
   easy_localization: any
   get_storage: ^2.0.3
+  flutter_facebook_auth: ^4.3.4
+  firebase_auth: ^3.3.18
+  firebase_core: ^1.17.0
+  google_sign_in: ^5.3.2
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
