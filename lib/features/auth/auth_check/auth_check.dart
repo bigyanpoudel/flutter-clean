@@ -33,7 +33,7 @@ class AuthCheckWidget extends ConsumerWidget {
                 {context.router.replace(const NavigationScreenRoute())}
               }
             else
-              {context.router.replace(const LoginPageRoute())}
+              {context.router.replace(const LoginScreenRoute())}
           },
           unknown: (_) {},
         );

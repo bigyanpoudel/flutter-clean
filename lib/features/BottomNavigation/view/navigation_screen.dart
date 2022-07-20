@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:test_app/config/localization/app_localization.dart';
 import 'package:test_app/config/theme/theme_selector.dart';
+import 'package:test_app/features/auth/auth_provider/auth_provider.dart';
 import 'package:test_app/widget/molecules/BottomNavigation/bottom_navigation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import '../../../routes/routes.dart';
@@ -23,14 +24,20 @@ class NavigationScreen extends ConsumerWidget {
           const ThemeSelector(),
           const AppLocalization(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: GestureDetector(
-              onTap: () {
-                context.router.push(const SettingPageRoute());
+            padding: const EdgeInsets.only(right: 20),
+            child: Consumer(
+              builder: (context, ref, child) {
+                return IconButton(
+                  onPressed: () {
+                    ref.read(appAuthProvider).logout();
+                    context.router.replace(const LoginScreenRoute());
+                  },
+                  icon: const Icon(
+                    Icons.logout_outlined,
+                    color: Colors.white,
+                  ),
+                );
               },
-              child: const Icon(
-                Icons.settings,
-              ),
             ),
           ),
         ],

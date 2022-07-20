@@ -64,9 +64,17 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> logout() {
-    // TODO: implement logout
-    throw UnimplementedError();
+  Future<Either<AuthFailure, Unit>> logout() async {
+    try {
+      await Future.wait([
+        googleSignIn.signOut(),
+        firebaseAuth.signOut(),
+      ]);
+
+      return right(unit);
+    } on Exception {
+      return left(const AuthFailure.serverFailure());
+    }
   }
 }
 

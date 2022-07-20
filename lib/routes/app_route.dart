@@ -5,7 +5,6 @@ import 'package:test_app/features/AutoRoute/views/main_page.dart';
 import 'package:test_app/features/AutoRoute/views/param_page.dart';
 import 'package:test_app/features/AutoRoute/views/second_page.dart';
 import 'package:test_app/features/BottomNavigation/view/navigation_screen.dart';
-import 'package:test_app/features/Login/view/login_page.dart';
 import 'package:test_app/features/Setting/setting_screen.dart';
 import 'package:test_app/features/auth/auth_check/auth_check.dart';
 import 'package:test_app/features/auth/view/login_screen.dart';
@@ -34,6 +33,5 @@ import 'package:test_app/features/onboarding/onboarding_screen.dart';
     MaterialRoute(page: SecondPage),
   ]),
   MaterialRoute(page: ParamPage, path: "/param/:id"),
-  MaterialRoute(page: LoginPage)
 ])
 class $AppRouter {}
